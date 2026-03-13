@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Auto</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;background:#09090b;color:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,calc(100% - 32px));margin:0 auto}
+    .header{position:sticky;top:0;z-index:50;background:rgba(9,9,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.1)}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 0}
+    .brand-title{font-size:28px;font-weight:900;letter-spacing:.22em}
+    .brand-sub{font-size:12px;text-transform:uppercase;letter-spacing:.25em;color:#a1a1aa}
+    .nav{display:flex;gap:22px;font-size:14px;color:#d4d4d8;flex-wrap:wrap}
+    .hero{position:relative;min-height:70vh;display:flex;align-items:flex-end;border-bottom:1px solid rgba(255,255,255,.1);background:linear-gradient(to top,rgba(9,9,11,1),rgba(9,9,11,.72),rgba(9,9,11,.2)),url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat}
+    .hero-content{padding:80px 0 64px;max-width:780px}
+    .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.3em;color:#a1a1aa;margin-bottom:12px}
+    .hero h1{font-size:clamp(34px,5vw,62px);line-height:1.08;font-weight:900}
+    .hero p{margin-top:22px;color:#d4d4d8;max-width:760px}
+    .main{padding:64px 0;display:grid;gap:24px}
+    .section{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:32px}
+    .section h2{font-size:34px;margin-bottom:18px}
+    .section h3{font-size:26px;margin-bottom:14px}
+    .muted{color:#d4d4d8}
+    .grid-2,.grid-3,.grid-4{display:grid;gap:24px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:24px}
+    .service-card,.product-card{overflow:hidden;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:24px}
+    .card-image{height:220px;width:100%;object-fit:cover}
+    .content{padding:22px}
+    .price{font-size:28px;font-weight:800;margin-top:10px}
+    .list{display:grid;gap:10px;color:#d4d4d8}
+    .catalog{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;color:#d4d4d8}
+    .mock-product{height:190px;display:flex;align-items:center;justify-content:center;padding:20px}
+    .mock-inner{width:100%;height:100%;border-radius:22px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;text-align:center}
+    .mock-vonixx{font-size:12px;text-transform:uppercase;letter-spacing:.3em;color:#d4d4d8}
+    .mock-name{font-size:42px;font-weight:900;margin-top:10px}
+    .mock-desc{font-size:14px;margin-top:8px;color:#e4e4e7}
+    .lime{background:linear-gradient(135deg,#18181b,#27272a,rgba(163,230,53,.8))}
+    .cyan{background:linear-gradient(135deg,#09090b,#18181b,rgba(34,211,238,.55))}
+    .footer{border-top:1px solid rgba(255,255,255,.1);padding:40px 0;color:#a1a1aa}
+    .footer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+    .footer h4{color:#fff;font-size:20px;margin-bottom:10px}
+    .footer-bottom{margin-top:30px;padding-top:20px;text-align:center;border-top:1px solid rgba(255,255,255,.1)}
+    ul.simple{list-style:none;display:grid;gap:10px;color:#d4d4d8}
+    .spaced p + p{margin-top:10px}
+    .team-photo{width:96px;height:96px;border-radius:999px;border:1px solid rgba(255,255,255,.15);object-fit:cover;margin:0 auto 16px;display:block}
+    @media (max-width:900px){.grid-2,.grid-3,.grid-4,.footer-grid,.catalog{grid-template-columns:1fr}.nav{display:none}.section{padding:22px}.section h2{font-size:28px}.section h3{font-size:22px}.brand-title{font-size:22px}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div>
+        <div class="brand-title">APEX AUTO</div>
+        <div class="brand-sub">Estética Automotiva & Produtos</div>
+      </div>
+      <nav class="nav">
+        <a href="#ficha">Ficha Técnica</a>
+        <a href="#historia">História</a>
+        <a href="#etica">Ética</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#marketing">Marketing</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Projeto empresarial</div>
+      <h1>Excelência em estética automotiva, serviços especializados e fornecimento de produtos profissionais.</h1>
+      <p>A Apex Auto é uma empresa focada em estética automotiva, serviços especializados e fornecimento de produtos profissionais, desenvolvida para apresentar uma estrutura organizada, visão empreendedora e compromisso com qualidade, atendimento e acessibilidade em Brazlândia.</p>
+    </div>
+  </section>
+
+  <main class="container main">
+    <section id="ficha" class="section">
+      <h2>1. Ficha Técnica</h2>
+      <div class="grid-2">
+        <div class="card spaced">
+          <p><strong>Razão Social:</strong> Apex Auto Estética Automotiva e Comércio de Produtos Ltda.</p>
+          <p><strong>Nome Fantasia:</strong> Apex Auto</p>
+          <p><strong>Ramo:</strong> Estética automotiva e comércio de produtos</p>
+          <p><strong>Atividade:</strong> Lavagem automotiva, higienização, polimento, revitalização, envelopamento, pintura, serviços especiais e fornecimento de produtos para estética automotiva.</p>
+          <p><strong>Localização:</strong> Brazlândia – DF</p>
+          <p><strong>Horário de funcionamento:</strong> Segunda a sábado, das 8h às 18h</p>
+        </div>
+        <div class="card">
+          <p style="font-weight:700;margin-bottom:12px">Integrantes</p>
+          <ul class="simple">
+            <li>• Felipe Gabriel Monteiro Silva – CEO</li>
+            <li>• Kauã Cardoso Rodrigues – Diretor Operacional</li>
+            <li>• Rhuan Gustavo Xavier – Diretor Comercial</li>
+            <li>• Victor Gabriel Dias – Diretor Administrativo e Financeiro</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="historia" class="grid-2">
+      <div class="section">
+        <h2>2. História da Empresa</h2>
+        <p class="muted">A Apex Auto surgiu da união de seus sócios com o objetivo de criar uma empresa moderna em Brazlândia, focada em estética automotiva, cuidado com veículos do dia a dia e fornecimento de produtos de qualidade para clientes e profissionais da área. A empresa também nasceu fortalecida por uma parceria com a Vonixx, referência no segmento, atuando como fornecedora de produtos de estética automotiva e contribuindo para ampliar a qualidade dos serviços oferecidos. Com essa base, a Apex Auto foi criada para transformar o cenário local, levando mais acessibilidade, qualidade, confiança e variedade de soluções automotivas para Brazlândia.</p>
+      </div>
+      <div class="section">
+        <h2>3. Missão</h2>
+        <p class="muted">Oferecer serviços de estética automotiva e produtos de qualidade com atendimento transparente, ético e eficiente, proporcionando confiança, cuidado e satisfação aos clientes, enquanto desenvolvemos uma empresa sólida e reconhecida pela excelência.</p>
+        <h2 style="margin-top:28px">4. Visão</h2>
+        <p class="muted">Ser reconhecida no futuro como uma das empresas de estética automotiva de maior credibilidade em Brazlândia e região, destacando-se pela qualidade dos serviços, pela variedade de produtos e pelo relacionamento duradouro com clientes, colaboradores e parceiros.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. Valores</h2>
+      <div class="grid-2">
+        <div class="card muted">Transparência em todas as negociações</div>
+        <div class="card muted">Respeito com clientes, colaboradores e parceiros</div>
+        <div class="card muted">Compromisso com qualidade e procedência</div>
+        <div class="card muted">Ética profissional acima de qualquer venda</div>
+        <div class="card muted">Responsabilidade social e ambiental</div>
+      </div>
+    </section>
+
+    <section id="etica" class="section">
+      <h2>6. Código de Ética</h2>
+      <div class="grid-2">
+        <div class="card"><h3>I. Concorrência</h3><ul class="simple"><li>• Não divulgar informações falsas sobre empresas concorrentes.</li><li>• Não praticar concorrência desleal ou copiar identidade de outras marcas.</li><li>• Respeitar preços, campanhas e posicionamento do mercado com honestidade.</li></ul></div>
+        <div class="card"><h3>II. Colaboradores</h3><ul class="simple"><li>• Todos devem agir com respeito, sem discriminação, assédio ou favorecimento indevido.</li><li>• É obrigatório cumprir horários, metas e responsabilidades com profissionalismo.</li><li>• Informações internas e dados da empresa devem ser tratados com sigilo.</li></ul></div>
+        <div class="card"><h3>III. Clientes</h3><ul class="simple"><li>• Todo cliente deve receber atendimento claro, educado e sem promessas enganosas.</li><li>• A empresa deve informar condições reais dos serviços, produtos, valores, prazos e garantias.</li><li>• É proibido omitir defeitos, limitações do serviço, riscos ou informações relevantes ao cliente.</li></ul></div>
+        <div class="card"><h3>IV. Fornecedores</h3><ul class="simple"><li>• Parcerias devem ser feitas com base em confiança, contrato e clareza nas condições.</li><li>• É proibido receber vantagens pessoais em troca de favorecimento comercial.</li><li>• Pagamentos e negociações devem seguir o que foi acordado formalmente.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7. Normas e Violação do Código de Ética</h2>
+      <div class="list">
+        <div class="card"><p><strong>Situação:</strong> Colaborador promete um resultado impossível no serviço apenas para fechar a venda.</p><p><strong>Infração:</strong> Violação do dever de transparência com o cliente e propaganda enganosa.</p><p><strong>Punição/Advertência:</strong> Advertência formal, suspensão e desligamento em caso de reincidência.</p></div>
+        <div class="card"><p><strong>Situação:</strong> Colaborador trata cliente de forma desrespeitosa ou discriminatória.</p><p><strong>Infração:</strong> Violação das regras de conduta e respeito.</p><p><strong>Punição/Advertência:</strong> Advertência imediata, treinamento obrigatório e possível suspensão.</p></div>
+        <div class="card"><p><strong>Situação:</strong> Funcionário recebe vantagem indevida de fornecedor para priorizar uma marca sem autorização.</p><p><strong>Infração:</strong> Quebra de ética profissional e conflito de interesses.</p><p><strong>Punição/Advertência:</strong> Suspensão, investigação interna e demissão por justa causa conforme gravidade.</p></div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="section">
+        <h2>8. Organograma</h2>
+
+        <div class="card" style="margin-top:22px">
+          <h3>Nossa equipe</h3>
+          <div class="grid-2" style="margin-top:20px">
+            <div class="card" style="text-align:center">
+              <img class="team-photo" src="felipe.jpg" alt="Felipe Gabriel Monteiro Silva">
+              <strong>Felipe Gabriel Monteiro Silva</strong>
+              <p class="muted">CEO</p>
+            </div>
+            <div class="card" style="text-align:center">
+              <img class="team-photo" src="kaua.jpg" alt="Kauã Cardoso Rodrigues">
+              <strong>Kauã Cardoso Rodrigues</strong>
+              <p class="muted">Diretor de Operações</p>
+            </div>
+            <div class="card" style="text-align:center">
+              <img class="team-photo" src="rhuan.jpg" alt="Rhuan Gustavo Xavier">
+              <strong>Rhuan Gustavo Xavier</strong>
+              <p class="muted">Diretor de Marketing e Comercial</p>
+            </div>
+            <div class="card" style="text-align:center">
+              <img class="team-photo" src="victor.jpg" alt="Victor Gabriel Dias">
+              <strong>Victor Gabriel Dias</strong>
+              <p class="muted">Diretor de Finanças</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:22px">
+          <h3>Tabela organizacional</h3>
+          <div class="list" style="margin-top:18px">
+            <div class="card" style="text-align:center;max-width:380px;margin:0 auto"><strong>Felipe Gabriel Monteiro Silva</strong><p class="muted">CEO</p></div>
+            <div class="grid-3">
+              <div class="card" style="text-align:center"><strong>Victor Gabriel Dias</strong><p class="muted">Diretor de Finanças</p></div>
+              <div class="card" style="text-align:center"><strong>Kauã Cardoso Rodrigues</strong><p class="muted">Diretor de Operações</p></div>
+              <div class="card" style="text-align:center"><strong>Rhuan Gustavo Xavier</strong><p class="muted">Diretor de Marketing e Comercial</p></div>
+            </div>
+            <div class="grid-2">
+              <div class="card" style="text-align:center"><strong>Supervisor de Atendimento</strong><p class="muted">Orçamentos e contato com clientes</p></div>
+              <div class="card" style="text-align:center"><strong>Supervisor Técnico</strong><p class="muted">Serviços, qualidade e execução</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>9. Cargos e Funções</h2>
+        <div class="list">
+          <div><strong>CEO – Felipe Gabriel Monteiro Silva</strong><p class="muted">Lidera a empresa, define estratégias, acompanha resultados e representa a Apex Auto.</p></div>
+          <div><strong>Diretor de Operações – Kauã Cardoso Rodrigues</strong><p class="muted">Coordena os serviços automotivos, organiza a execução e garante o padrão de qualidade.</p></div>
+          <div><strong>Diretor de Marketing e Comercial – Rhuan Gustavo Xavier</strong><p class="muted">Cuida das vendas, negociações, relacionamento com clientes, divulgação e expansão comercial.</p></div>
+          <div><strong>Diretor de Finanças – Victor Gabriel Dias</strong><p class="muted">Controla caixa, pagamentos, contratos, estoque e organização financeira da empresa.</p></div>
+          <div><strong>Supervisor de Atendimento</strong><p class="muted">Acompanha o contato com clientes, organiza orçamentos e garante um bom atendimento.</p></div>
+          <div><strong>Supervisor Técnico</strong><p class="muted">Supervisiona higienização, polimento, lavagem técnica e revitalização.</p></div>
+          <div><strong>Aplicador de Envelopamento e Película</strong><p class="muted">Executa envelopamento, acabamento e personalização visual.</p></div>
+          <div><strong>Auxiliar de Lavagem</strong><p class="muted">Atua na pré-lavagem, secagem, limpeza externa e apoio geral.</p></div>
+          <div><strong>Auxiliar Administrativo</strong><p class="muted">Faz cadastros, controla agenda, pagamentos e suporte interno.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>10. Recursos Humanos</h2>
+      <div class="grid-2">
+        <div class="card"><h3>Processo Seletivo</h3><p class="muted">Triagem de currículo, entrevista inicial, teste prático na área automotiva, avaliação comportamental, entrevista final e contratação.</p></div>
+        <div class="card"><h3>Departamento Pessoal</h3><p class="muted">Vale-transporte, vale-alimentação, bonificação por metas, comissão sobre vendas de produtos e treinamento técnico interno.</p></div>
+        <div class="card"><h3>Média Salarial</h3><p class="muted">Entre R$ 5.000 e R$ 12.500, variando conforme setor, cargo, produtividade e vendas.</p></div>
+        <div class="card"><h3>Quantidade de Funcionários</h3><p class="muted">10 colaboradores diretos, além de apoio terceirizado para manutenção e suporte técnico.</p></div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="section"><h2>11. Cadastro de Clientes e Meios de Pagamento</h2><p class="muted">A empresa utiliza um sistema digital de cadastro com nome completo, CPF, telefone, email, endereço, histórico de serviços, produtos comprados e preferências do cliente. Os pagamentos podem ser realizados por PIX, dinheiro, transferência bancária, cartão de débito e crédito.</p></div>
+      <div class="section"><h2>12. Análise da Concorrência</h2><p class="muted">Os concorrentes da região costumam oferecer lavagens básicas e poucos serviços especializados. A Apex Auto se diferencia ao investir em estrutura organizada, variedade de serviços, fornecimento de produtos, atendimento mais próximo, acabamento superior e presença digital constante.</p></div>
+    </section>
+
+    <section class="grid-2">
+      <div class="section"><h2>13. Diferencial Competitivo</h2><p class="muted">Os clientes devem escolher a Apex Auto porque a empresa une atendimento de qualidade, variedade de serviços, bons produtos, cuidado com cada veículo, preços justos e compromisso real com resultado e confiança.</p></div>
+      <div class="section"><h2>14. Público-Alvo</h2><p class="muted">Homens e mulheres de 18 a 60 anos, motoristas do dia a dia, famílias, trabalhadores, proprietários de carros populares, caminhonetes e veículos de uso profissional, que valorizam limpeza, conservação, estética, praticidade e bom atendimento.</p></div>
+    </section>
+
+    <section id="produtos" class="section">
+      <h2>15. Produtos e Serviços</h2>
+      <p class="muted">A Apex Auto trabalha com serviços de estética automotiva e também como fornecedora de produtos para cuidados automotivos, atendendo clientes finais e profissionais da área.</p>
+
+      <div style="margin-top:32px">
+        <h3>Serviços automotivos</h3>
+        <div class="grid-3" style="margin-top:20px">
+          <div class="service-card"><img class="card-image" src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80" alt="Lavagem Completa"><div class="content"><h3 style="font-size:22px">Lavagem Completa</h3><div class="price">A partir de R$ 50</div><p class="muted">Limpeza externa e interna com ótimo acabamento</p></div></div>
+          <div class="service-card"><img class="card-image" src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=1200&q=80" alt="Higienização Interna"><div class="content"><h3 style="font-size:22px">Higienização Interna</h3><div class="price">A partir de R$ 120</div><p class="muted">Bancos, painéis, portas e detalhamento interno</p></div></div>
+          <div class="service-card"><img class="card-image" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Lavagem de Motor e Chassi"><div class="content"><h3 style="font-size:22px">Lavagem de Motor e Chassi</h3><div class="price">A partir de R$ 80</div><p class="muted">Limpeza cuidadosa com segurança e proteção</p></div></div>
+          <div class="service-card"><img class="card-image" src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=80" alt="Polimento Técnico"><div class="content"><h3 style="font-size:22px">Polimento Técnico</h3><div class="price">A partir de R$ 250</div><p class="muted">Mais brilho, correção visual e melhor acabamento</p></div></div>
+          <div class="service-card"><img class="card-image" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80" alt="Envelopamento"><div class="content"><h3 style="font-size:22px">Envelopamento</h3><div class="price">Sob orçamento</div><p class="muted">Personalização visual com acabamento profissional</p></div></div>
+          <div class="service-card"><img class="card-image" src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80" alt="Restauração de Plásticos"><div class="content"><h3 style="font-size:22px">Restauração de Plásticos</h3><div class="price">A partir de R$ 90</div><p class="muted">Recuperação de aparência e proteção das peças</p></div></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:32px">
+        <h3>Catálogo de serviços da empresa</h3>
+        <div class="catalog" style="margin-top:18px">
+          <div>• Desinfecção</div><div>• Enceramento</div><div>• Higienização Interna</div><div>• Lavagem Completa</div><div>• Lavagem a Seco</div><div>• Limpeza de Estofados</div><div>• Polimento</div><div>• Serviços Especiais</div><div>• Lavagem Comum</div><div>• Lavagem Gran Premium</div><div>• Lavagem de Motor e Chassi</div><div>• Envelopamento</div><div>• Pintura</div><div>• Restauração de Plásticos</div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px">
+        <h3>Produtos automotivos</h3>
+        <p class="muted">Também atuamos como fornecedores de produtos de estética automotiva, com itens para limpeza, proteção e acabamento.</p>
+        <div class="grid-4" style="margin-top:20px">
+          <div class="product-card"><div class="mock-product lime"><div class="mock-inner"><div><div class="mock-vonixx">Vonixx</div><div class="mock-name">V-ECO</div><div class="mock-desc">Shampoo automotivo</div></div></div></div><div class="content"><h3 style="font-size:20px">Shampoo Automotivo Vonixx</h3><div class="price" style="font-size:24px">R$ 34,90</div><p class="muted">Ideal para lavagem segura e eficiente</p></div></div>
+          <div class="product-card"><div class="mock-product cyan"><div class="mock-inner"><div><div class="mock-vonixx">Vonixx</div><div class="mock-name" style="color:#67e8f9">SINERGY</div><div class="mock-desc">Spray para rodas</div></div></div></div><div class="content"><h3 style="font-size:20px">Spray Limpeza Interna</h3><div class="price" style="font-size:24px">R$ 24,90</div><p class="muted">Limpeza prática para painel, plástico e acabamento</p></div></div>
+          <div class="product-card"><img class="card-image" style="height:190px" src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=1200&q=80" alt="Revitalizador de Plásticos"><div class="content"><h3 style="font-size:20px">Revitalizador de Plásticos</h3><div class="price" style="font-size:24px">R$ 39,90</div><p class="muted">Mais brilho e proteção para partes plásticas</p></div></div>
+          <div class="product-card"><img class="card-image" style="height:190px" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80" alt="Cera Líquida Automotiva"><div class="content"><h3 style="font-size:20px">Cera Líquida Automotiva</h3><div class="price" style="font-size:24px">R$ 49,90</div><p class="muted">Proteção com brilho intenso para a pintura</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="section"><h2>16. Tipos de Estoques</h2><p class="muted">A empresa trabalha com estoque físico de produtos automotivos disponíveis para venda, estoque de uso interno para execução dos serviços, e estoque digital em sistema para controle de entrada, saída, validade, fornecedores e reposição.</p></div>
+      <div id="marketing" class="section"><h2>17. Plano de Marketing</h2><p class="muted">Divulgação em Instagram, TikTok, Facebook e Google Meu Negócio; vídeos de antes e depois; promoções de lavagem e higienização; campanhas de indicação; combos de serviços; divulgação de produtos; atendimento rápido no WhatsApp e produção de conteúdo para gerar confiança e atrair clientes da região.</p></div>
+    </section>
+
+    <section class="section">
+      <h2>18. Plano de Negócios</h2>
+      <div class="grid-2">
+        <div class="card spaced"><p><strong>Investimento dos sócios:</strong> R$ 100.000 por sócio</p><p><strong>Capital inicial:</strong> R$ 500.000</p><p><strong>Gastos iniciais:</strong> aluguel do ponto, equipamentos de lavagem, compressores, aspiradores, produtos, reforma, móveis, sistema, marketing inicial, documentação e capital de giro.</p></div>
+        <div class="card spaced"><p><strong>Previsão financeira:</strong> faturamento crescente com serviços diários e venda de produtos nos primeiros 12 meses</p><p><strong>Resultado esperado:</strong> equilíbrio no início e aumento do lucro conforme fidelização dos clientes e crescimento das vendas.</p><p><strong>Divisão dos lucros:</strong> proporcional à participação societária, após reserva para manutenção, estoque e reinvestimento.</p></div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="section"><h2>19. Projeto Sustentabilidade</h2><p class="muted">A empresa promove uso consciente da água, descarte correto de embalagens e resíduos químicos, redução de papel com processos digitais e preferência por produtos e fornecedores com responsabilidade ambiental.</p></div>
+      <div class="section"><h2>20. Projeto Social</h2><p class="muted">A Apex Auto desenvolve um projeto social com arrecadação solidária, apoio a ações comunitárias em Brazlândia e incentivo à formação de jovens interessados em aprender sobre estética automotiva e atendimento profissional.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Apex Auto</h4>
+        <p>Estética automotiva, serviços especializados e fornecimento de produtos profissionais para Brazlândia e região.</p>
+      </div>
+      <div>
+        <h4>Contato e redes</h4>
+        <p>Email comercial: contato@apexauto.com.br</p>
+        <p>Facebook: facebook.com/ApexAuto</p>
+        <p>Instagram: instagram.com/ApexAuto</p>
+        <p>TikTok: tiktok.com/@ApexAuto</p>
+        <p>X: x.com/ApexAuto</p>
+      </div>
+      <div>
+        <h4>Suporte</h4>
+        <p>Em caso de dúvidas, problemas com pedidos, serviços ou atendimento, entre em contato com nosso suporte pelo email:</p>
+        <p style="margin-top:10px;color:#fff;font-weight:700">suporte@apexauto.com.br</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">© 2026 Apex Auto — projeto empresarial de estética automotiva completo.</div>
+  </footer>
+</body>
+</html>
