@@ -50,12 +50,16 @@
     ul.simple{list-style:none;display:grid;gap:10px;color:#d4d4d8}
     .spaced p + p{margin-top:10px}
     .team-badge{width:96px;height:96px;border-radius:999px;border:1px solid rgba(255,255,255,.15);background:linear-gradient(135deg,#3f3f46,#52525b);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;color:#fff;margin:0 auto 16px}
+    .sust-grid{display:grid;grid-template-columns:380px 1fr;gap:24px;align-items:start}
     .sust-photo-wrap{overflow:hidden;border-radius:24px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.2)}
-    .sust-photo{width:100%;height:320px;object-fit:cover}
-    .sust-fallback{display:none;min-height:320px;align-items:center;justify-content:center;text-align:center;padding:24px;color:#d4d4d8;background:linear-gradient(135deg,#18181b,#27272a)}
+    .sust-photo{width:100%;height:100%;min-height:360px;object-fit:cover}
+    .sust-fallback{display:none;min-height:360px;align-items:center;justify-content:center;text-align:center;padding:24px;color:#d4d4d8;background:linear-gradient(135deg,#18181b,#27272a)}
+    .sust-blocks{display:grid;gap:16px}
+    .sust-item{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:18px}
+    .sust-item h3{font-size:18px;margin-bottom:8px;color:#fff}
     .sust-note{margin-top:16px;font-size:14px;color:#a1a1aa}
     @media (max-width:900px){
-      .grid-2,.grid-3,.grid-4,.footer-grid,.catalog{grid-template-columns:1fr}
+      .grid-2,.grid-3,.grid-4,.footer-grid,.catalog,.sust-grid{grid-template-columns:1fr}
       .nav{display:none}
       .section{padding:22px}
       .section h2{font-size:28px}
@@ -272,33 +276,46 @@
     <section class="grid-2">
       <div class="section">
         <h2>19. Projeto Sustentabilidade</h2>
+        <div class="sust-grid" style="margin-top:18px">
+          <div>
+            <div class="sust-photo-wrap">
+              <img
+                src="sustentabilidade.jpg"
+                alt="Projeto de sustentabilidade da Apex Auto"
+                class="sust-photo"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              >
+              <div class="sust-fallback">
+                <div>
+                  <strong style="display:block;color:#fff;margin-bottom:8px;">Foto de Sustentabilidade</strong>
+                  Coloque uma imagem JPG com o nome <strong style="color:#fff;">sustentabilidade.jpg</strong> na mesma pasta do <strong style="color:#fff;">index.html</strong>.
+                </div>
+              </div>
+            </div>
+            
 
-        <div class="spaced" style="margin-top:18px">
-          <p class="muted">A Apex Auto promove o uso consciente da água, o descarte correto de embalagens e resíduos químicos, a redução do uso de papel por meio de processos digitais e a preferência por produtos e fornecedores que atuem com responsabilidade ambiental.</p>
+          <div class="sust-blocks">
+            <div class="sust-item">
+              <h3>Responsabilidade ambiental</h3>
+              <p class="muted">A Apex Auto promove o uso consciente da água, o descarte correto de embalagens e resíduos químicos, a redução do uso de papel por meio de processos digitais e a preferência por produtos e fornecedores que atuem com responsabilidade ambiental.</p>
+            </div>
 
-          <p class="muted">Outro ponto importante é a parceria com a Vonixx, empresa que hoje se destaca no mercado da estética automotiva. A marca é reconhecida por desenvolver produtos com atenção ao meio ambiente e também à saúde das pessoas que trabalham diariamente com esse tipo de produto químico.</p>
+            <div class="sust-item">
+              <h3>Parceria com a Vonixx</h3>
+              <p class="muted">Outro ponto importante é a parceria com a Vonixx, empresa que hoje se destaca no mercado da estética automotiva. A marca é reconhecida por desenvolver produtos com atenção ao meio ambiente e também à saúde das pessoas que trabalham diariamente com esse tipo de produto químico.</p>
+            </div>
 
-          <p class="muted">Nós, da Apex Auto, somos parceiros da Vonixx e valorizamos muito esses cuidados, porque entendemos que sustentabilidade não está apenas no resultado final do serviço, mas também na forma correta de trabalhar, armazenar materiais e descartar resíduos.</p>
+            <div class="sust-item">
+              <h3>Compromisso da Apex Auto</h3>
+              <p class="muted">Nós, da Apex Auto, somos parceiros da Vonixx e valorizamos muito esses cuidados, porque entendemos que sustentabilidade não está apenas no resultado final do serviço, mas também na forma correta de trabalhar, armazenar materiais e descartar resíduos.</p>
+            </div>
 
-          <p class="muted">Em empresas de estética automotiva, o dispenser de sujeira é obrigatório. Esse equipamento acumula sujeiras e resíduos que não podem ser descartados diretamente no esgoto, ajudando a evitar contaminação e garantindo um processo mais seguro e responsável para o meio ambiente.</p>
-        </div>
-
-        <div class="sust-photo-wrap" style="margin-top:22px">
-          <img
-            src="sustentabilidade.jpg"
-            alt="Projeto de sustentabilidade da Apex Auto"
-            class="sust-photo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-          >
-          <div class="sust-fallback">
-            <div>
-              <strong style="display:block;color:#fff;margin-bottom:8px;">Foto de Sustentabilidade</strong>
-              Coloque uma imagem JPG com o nome <strong style="color:#fff;">sustentabilidade.jpg</strong> na mesma pasta do <strong style="color:#fff;">index.html</strong>.
+            <div class="sust-item">
+              <h3>Dispenser de sujeira</h3>
+              <p class="muted">Em empresas de estética automotiva, o dispenser de sujeira é obrigatório. Esse equipamento acumula sujeiras e resíduos que não podem ser descartados diretamente no esgoto, ajudando a evitar contaminação e garantindo um processo mais seguro e responsável para o meio ambiente.</p>
             </div>
           </div>
         </div>
-
-        <p class="sust-note">Quando você adicionar a imagem com esse nome, ela aparece automaticamente aqui.</p>
       </div>
 
       <div class="section">
